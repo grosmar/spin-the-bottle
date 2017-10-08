@@ -1,0 +1,25 @@
+{
+  "name": "spin-the-bottle",
+  "version": "0.0.0",
+  "description": "Spin the Bottle",
+  "main": "bin/TruthOrDare.js",
+  "scripts": {
+    "install": "npm i haxeshim -g && npm i switchx -g && switchx install latest && npm i lix.pm -g && lix download"
+  },
+  "dependencies": {
+    "browserify": "^14.4.0",
+    "gsap": "",
+    "require": "^2.4.20"
+  },
+  "engines": {
+    "node": "4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/zubak.balazs/truth-or-dare.git"
+  },
+  "keywords": [
+    "game"
+  ],
+  "author": "balazs Zubak"
+}
