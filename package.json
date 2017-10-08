@@ -5,7 +5,8 @@
     "description": "SpinTheBottleGame.",
     "main": "index.js",
     "scripts": {
-        "install": "npm i haxeshim -g && npm i switchx -g && switchx install latest && npm i lix.pm -g && lix download"
+        "install": "npm i haxeshim -g && npm i switchx -g && switchx install latest && npm i lix.pm -g && lix download",
+		"build": "haxe build.hxml && cordova build"
     },
     "author": "r7d",
     "license": "Apache-2.0",
