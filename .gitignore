@@ -2,7 +2,7 @@ node_modules
 # Mac
 .DS_Store
 
-platforms/android
+platforms
 
 # res
 resources/signing
