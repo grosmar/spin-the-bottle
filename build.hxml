@@ -2,3 +2,4 @@
 -main Main
 -lib hxmath
 -dce full
+-js www/js/index.js 

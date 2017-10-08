@@ -1,0 +1,21 @@
+{
+    "name": "r7d.spinthebottle",
+    "displayName": "SpinTheBottle",
+    "version": "1.0.0",
+    "description": "SpinTheBottleGame.",
+    "main": "index.js",
+    "scripts": {
+        
+    },
+    "author": "r7d",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "cordova-plugin-whitelist": "^1.3.2"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-whitelist": {}
+        },
+        "platforms": []
+    }
+}
