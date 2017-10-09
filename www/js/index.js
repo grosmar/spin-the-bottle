@@ -53,24 +53,23 @@ spinthebottle_Bottle.prototype = {
 	,grab: function(options) {
 		var _gthis = this;
 		spinthebottle_Bottle.halt(options.start);
-		if(!this.spinning) {
-			var e = options.start.target;
-			var center = spinthebottle_Bottle.center(e);
-			var offset = this.angle(options.pos(options.start),center) - this.rotation;
-			var onMove = function(e1) {
-				var onMove1 = options.pos(e1);
-				_gthis.setTarget(onMove1,center,offset);
-			};
-			e.ownerDocument.addEventListener(options.move,onMove);
-			var onRelease = null;
-			onRelease = function() {
-				e.ownerDocument.removeEventListener(options.move,onMove);
-				e.ownerDocument.removeEventListener(options.release,onRelease);
-				_gthis.release();
-			};
-			var onRelease1 = onRelease;
-			e.ownerDocument.addEventListener(options.release,onRelease);
-		}
+		this.rSpeed = 0;
+		var e = options.start.target;
+		var center = spinthebottle_Bottle.center(e);
+		var offset = this.angle(options.pos(options.start),center) - this.rotation;
+		var onMove = function(e1) {
+			var onMove1 = options.pos(e1);
+			_gthis.setTarget(onMove1,center,offset);
+		};
+		e.ownerDocument.addEventListener(options.move,onMove);
+		var onRelease = null;
+		onRelease = function() {
+			e.ownerDocument.removeEventListener(options.move,onMove);
+			e.ownerDocument.removeEventListener(options.release,onRelease);
+			_gthis.release();
+		};
+		var onRelease1 = onRelease;
+		e.ownerDocument.addEventListener(options.release,onRelease);
 	}
 	,mouseGrab: function(e) {
 		this.grab({ start : e, move : "mousemove", release : "mouseup", pos : function(e1) {
@@ -106,13 +105,13 @@ spinthebottle_Bottle.prototype = {
 		} else {
 			this.rotation = Math.abs(this.rotation - this.targetRotation) < .001 ? this.targetRotation : this.targetRotation * .1 + this.rotation * 0.9;
 		}
-		this.bottle.style.transform = "rotate(" + (90 + this.rotation * 180 / Math.PI) + "deg)";
+		this.bottle.style.transform = "rotate(" + (90 + this.rotation * 180 / Math.PI) + "deg) translate3d(0,0,0)";
 		window.requestAnimationFrame($bind(this,this.render));
 	}
 };
 var spinthebottle_Main = function() { };
 spinthebottle_Main.main = function() {
-	window.document.body.innerHTML = "<div id=\"root\" class=\"container\">\r\n\t\t\t<div class=\"square\">\r\n\t\t\t\t<div id=\"bottle\"></div>\r\n\t\t\t</div>\r\n\t\t</div>";
+	window.document.body.innerHTML = "<div id=\"root\" class=\"container\">\r\n\t\t\t<div class=\"square\">\r\n\t\t\t\t<div id=\"bottle\"></div>\r\n\t\t\t\t<canvas id=\"canvas\" width=\"100%\" height=\"100%\"></canvas>\r\n\t\t\t</div>\r\n\t\t</div>";
 	new spinthebottle_Bottle(window.document.getElementById("bottle"));
 };
 var $_, $fid = 0;

@@ -6,7 +6,7 @@ html, body {
 
 body {
 	background-color: #2d160e;
-	background-image: url("../img/bg.jpg");
+	background-image: url("../img/bg_small.jpg");
 	background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-position: center;
@@ -51,10 +51,14 @@ body {
 #bottle{
 	animation: fadein 0.3s ease-in;
 	cursor: pointer;
-	background-image: url("../img/bottle.png");
+	background-image: url("../img/bottle_small.png");
 	background-repeat: no-repeat;
     background-position: center;
 	background-size: contain;
 	width: 100%;
 	height: 100%;
+	
+	-webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0,0,0)
 }
