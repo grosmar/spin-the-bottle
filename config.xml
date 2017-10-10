@@ -24,7 +24,6 @@
     </platform>
     <preference name="Orientation" value="landscape" />
     <preference name="BackgroundColor" value="0xff000000" />
-    <preference name="Fullscreen" value="true" />
     <icon src="res/icon/icon.png" />
     <engine name="android" spec="^6.2.3" />
     <engine name="ios" spec="^4.4.0" />
