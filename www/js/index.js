@@ -89,7 +89,7 @@ spinthebottle_Bottle.prototype = {
 		}
 	}
 	,pursueTarget: function() {
-		this.rotation = Math.abs(this.rotation - this.targetRotation) < .001 ? this.targetRotation : this.targetRotation * .1 + this.rotation * 0.9;
+		this.rotation = Math.abs(this.rotation - this.targetRotation) < .001 ? this.targetRotation : this.targetRotation * .15 + this.rotation * 0.85;
 	}
 	,render: function(_) {
 		if(this.spinning) {
@@ -98,11 +98,13 @@ spinthebottle_Bottle.prototype = {
 			this.rSpeed *= .99;
 			if(Math.abs(this.rSpeed) < .001) {
 				this.spinning = false;
+				this.rotation = this.rotation * 180 / Math.PI % 360 * Math.PI / 180;
+				this.targetRotation = this.rotation * 180 / Math.PI % 360 * Math.PI / 180;
 			} else {
 				this.rSpeed += (this.rSpeed > 0 ? -1 : 1) * .001;
 			}
 		} else {
-			this.rotation = Math.abs(this.rotation - this.targetRotation) < .001 ? this.targetRotation : this.targetRotation * .1 + this.rotation * 0.9;
+			this.rotation = Math.abs(this.rotation - this.targetRotation) < .001 ? this.targetRotation : this.targetRotation * .15 + this.rotation * 0.85;
 		}
 		var iw = this.img.naturalWidth / this.img.naturalHeight * this.canvas.height;
 		var ih = this.canvas.height;

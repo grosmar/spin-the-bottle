@@ -15,7 +15,7 @@ class Bottle
 	static inline var GLIDING_COEFFICIENT = .99;
 	static inline var ABSOLUTE_DAMPENING = .001;
 	static inline var THRESHOLD = .001;
-	static inline var PULL = .1;
+	static inline var PULL = .15;
 	
 	var targetRotation:Float = .0;
 	var rSpeed:Float = .0;
@@ -124,6 +124,8 @@ class Bottle
 			rSpeed *= GLIDING_COEFFICIENT;
 			if (isNegligible(rSpeed)) {
 				spinning = false;		
+				rotation = ((rotation * 180 / PI ) % 360) * PI / 180;
+				targetRotation = ((rotation * 180 / PI ) % 360) * PI / 180;
 			}
 			else rSpeed += (if (rSpeed > 0) -1 else 1) * ABSOLUTE_DAMPENING;
 		}
@@ -143,7 +145,6 @@ class Bottle
 		ctx.translate(-(canvas.width/2), -(canvas.height/2)); //let's translate
 		ctx.drawImage(img, canvas.width/2 - iw/2, canvas.height/2 - ih/2, iw, ih); //draw the image ;)
 		ctx.restore(); //restore the state of canvas
-		
 		Browser.window.requestAnimationFrame(render);
 	}
 
