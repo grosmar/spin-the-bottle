@@ -8,6 +8,6 @@ Simple spin the bottle game
 - NPM
 
 # Install
-'''
+```
 npm install
-'''
+```
