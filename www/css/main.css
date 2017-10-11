@@ -19,8 +19,6 @@ body {
 	overflow: hidden;
 	
 	font-size: 100%;
-	font-family: "Lato", sans-serif;
-	color: #8f9cb5;
 	user-select: inherit;
 	box-sizing: border-box;
 }
@@ -29,8 +27,8 @@ body {
 .container, .square {
   display: flex;
   align-items: center;
-	justify-content: center;
-	margin: 0 auto;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 
@@ -44,7 +42,6 @@ body {
   position: relative;
   width: 100vmin;
   height: 100vmin;
-  
 }
 
 
@@ -61,10 +58,4 @@ body {
 	-webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;
     -webkit-transform: translate3d(0,0,0)
-}
-
-#canvas {
-	width: 100%;
-	height: 100%;
-	position: absolute;
 }

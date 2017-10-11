@@ -16,10 +16,8 @@ class Main
 		#if js
 		Browser.document.body.innerHTML = '
 		<div id="root" class="container">
-			<div class="square" id="squareContainer">
-				<!--<div id="bottle"></div>-->
-				<canvas id="canvas" ></canvas>
-			</div>
+			<canvas class="square" id="canvas">
+			</canvas>
 		</div>';
 		
 		new Bottle(/*Browser.document.getElementById("bottle"), */cast Browser.document.getElementById("canvas"));

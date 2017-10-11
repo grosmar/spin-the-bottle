@@ -120,7 +120,7 @@ spinthebottle_Bottle.prototype = {
 };
 var spinthebottle_Main = function() { };
 spinthebottle_Main.main = function() {
-	window.document.body.innerHTML = "\r\n\t\t<div id=\"root\" class=\"container\">\r\n\t\t\t<div class=\"square\" id=\"squareContainer\">\r\n\t\t\t\t<!--<div id=\"bottle\"></div>-->\r\n\t\t\t\t<canvas id=\"canvas\" ></canvas>\r\n\t\t\t</div>\r\n\t\t</div>";
+	window.document.body.innerHTML = "\r\n\t\t<div id=\"root\" class=\"container\">\r\n\t\t\t<canvas class=\"square\" id=\"canvas\">\r\n\t\t\t</canvas>\r\n\t\t</div>";
 	new spinthebottle_Bottle(window.document.getElementById("canvas"));
 };
 var $_, $fid = 0;

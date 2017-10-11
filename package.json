@@ -6,7 +6,11 @@
     "main": "index.js",
     "scripts": {
         "install": "npm i haxeshim -g && npm i switchx -g && switchx install latest && npm i lix.pm -g && lix download && cordova prepare",
-        "build": "haxe build.hxml && cordova build"
+        "build": "haxe build.hxml && cordova build",
+        "list.emulator": "avdmanager.bat list avd",
+        "run.emulator": "cordova emulate android",
+        "run.android": "cordova run android",
+        "run.ios": "cordova run ios"
     },
     "author": "r7d",
     "license": "Apache-2.0",
