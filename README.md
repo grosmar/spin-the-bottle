@@ -6,6 +6,7 @@ Simple spin the bottle game
 - Cordova 
 - Gradle
 - NPM
+- Haxe
 - IOS TOOLKIT??????
 
 # Install
